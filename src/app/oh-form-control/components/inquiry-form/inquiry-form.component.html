@@ -1,0 +1,28 @@
+<div>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()">
+
+    <app-form-control>
+      <app-label>Name:</app-label>
+      <input type="text" formControlName="name">
+      <app-control-errors [control]="form.get('name')"></app-control-errors>
+    </app-form-control>
+
+    <app-form-control>
+      <app-label>Position:</app-label>
+      <input id="position" type="text" formControlName="position">
+      <app-control-errors [control]="form.get('position')"></app-control-errors>
+    </app-form-control>
+
+    <app-form-control>
+      <app-label>Email:</app-label>
+      <input id="email" type="email" formControlName="email">
+      <app-control-errors [control]="form.get('email')"></app-control-errors>
+    </app-form-control>
+
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>

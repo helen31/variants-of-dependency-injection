@@ -1,0 +1,20 @@
+<div *ngIf="control?.invalid && (control?.dirty || control?.touched)">
+  <!--suppress TypeScriptValidateTypes -->
+  <ng-container *ngFor="let error of control?.errors | keyvalue" [ngSwitch]="error.key">
+    <ng-container *ngSwitchCase="'required'">
+      <span>This field is required.</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'email'">
+      <span>Email is invalid.</span>
+    </ng-container>
+    <ng-container *ngSwitchCase="'maxlength'">
+      <span>Required length {{ error?.value['requiredLength'] }}, actual {{ error?.value['actualLength'] }}</span>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      The field is invalid.
+    </ng-container>
+  </ng-container>
+</div>
+
+
+
