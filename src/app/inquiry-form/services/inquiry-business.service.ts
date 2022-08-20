@@ -14,6 +14,7 @@ export class InquiryBusinessService extends AbstractInquiryService {
   getForm(): FormGroup {
     return new FormGroup({
       inquiryType: new FormControl(this.formType),
+      totalQuantity: new FormControl(0, [Validators.required, Validators.max(50), Validators.min(0)]),
       name: new FormControl('', [
         Validators.required,
         Validators.maxLength(5)

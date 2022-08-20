@@ -5,13 +5,15 @@ import { LabelComponent } from './components/label/label.component';
 import { FormControlComponent } from './components/form-control/form-control.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChooseQuantityComponent } from './components/choose-quantity/choose-quantity.component';
 
 @NgModule({
   declarations: [
     InquiryFormComponent,
     ControlErrorsComponent,
     LabelComponent,
-    FormControlComponent
+    FormControlComponent,
+    ChooseQuantityComponent
   ],
   imports: [
     CommonModule,

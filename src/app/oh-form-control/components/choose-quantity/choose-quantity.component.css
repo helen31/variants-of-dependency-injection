@@ -1,0 +1,16 @@
+:host {
+  display: inline-block;
+}
+.choose-quantity > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.choose-quantity button > img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: auto;
+}
+.quantity {
+  padding: 0 5px;
+}
