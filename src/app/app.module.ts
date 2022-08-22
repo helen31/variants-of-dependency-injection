@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { OhFormControlModule } from './oh-form-control/oh-form-control.module';
 import { InquiryFormBusinessComponent } from './inquiry-form/inquiry-form-business/inquiry-form-business.component';
 import { InquiryFormGeneralComponent } from './inquiry-form/inquiry-form-general/inquiry-form-general.component';
+import { HttpClientModule } from "@angular/common/http";
+import { TestModule } from "./test/test.module";
+import { TestService } from "./services/test.service";
 
 @NgModule({
   declarations: [
@@ -14,9 +17,11 @@ import { InquiryFormGeneralComponent } from './inquiry-form/inquiry-form-general
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     OhFormControlModule,
+    TestModule,
   ],
-  providers: [],
+  // providers: [TestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
