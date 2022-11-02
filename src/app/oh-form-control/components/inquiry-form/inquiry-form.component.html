@@ -3,7 +3,7 @@
     [formGroup]="form"
     (ngSubmit)="onSubmit()">
 
-    <app-form-control>
+    <app-form-control *ngIf="formType === inquiryFormService.type">
       <app-label>Choose quantity:</app-label>
       <app-choose-quantity [increment]="1" formControlName="totalQuantity">
       </app-choose-quantity>

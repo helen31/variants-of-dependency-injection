@@ -7,13 +7,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class InquiryGeneralService extends AbstractInquiryService {
 
-  constructor(public formType: InquiryFormType) {
+  constructor(public type: InquiryFormType) {
     super();
   }
 
   getForm(): FormGroup {
     return new FormGroup({
-      inquiryType: new FormControl(InquiryFormType.general),
+      inquiryType: new FormControl(this.type),
       name: new FormControl('', [
         Validators.required,
         Validators.maxLength(5)

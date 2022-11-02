@@ -6,7 +6,14 @@ export enum InquiryFormType {
   general = 'general'
 }
 
-export abstract class AbstractInquiryService {
+export interface InquiryServiceInterface {
+  type: InquiryFormType;
+  getForm: () => FormGroup,
+  sendData: (form: FormGroup) => void;
+}
+
+export abstract class AbstractInquiryService implements InquiryServiceInterface {
+  abstract type: InquiryFormType;
   abstract getForm(): FormGroup;
 
   sendData(form: FormGroup): void {

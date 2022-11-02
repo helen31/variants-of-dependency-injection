@@ -1,7 +1,10 @@
 import { Component, Inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { LabelPosition } from '../label/label.component';
-import { AbstractInquiryService, INQUIRY_TOKEN } from '../../../inquiry-form/services/abstract-inquiry.service';
+import {
+  INQUIRY_TOKEN, InquiryFormType,
+  InquiryServiceInterface
+} from '../../../inquiry-form/services/abstract-inquiry.service';
 
 @Component({
   selector: 'app-inquiry-form',
@@ -10,9 +13,10 @@ import { AbstractInquiryService, INQUIRY_TOKEN } from '../../../inquiry-form/ser
 })
 export class InquiryFormComponent {
   form: FormGroup;
+  formType = InquiryFormType.business;
   labelPosition = LabelPosition;
 
-  constructor(@Inject(INQUIRY_TOKEN) private inquiryFormService: AbstractInquiryService) {
+  constructor(@Inject(INQUIRY_TOKEN) public inquiryFormService: InquiryServiceInterface) {
     this.form = this.inquiryFormService.getForm();
   }
 
